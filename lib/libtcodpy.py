@@ -25,6 +25,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import os
 import sys
 import ctypes
 import struct
@@ -54,10 +55,10 @@ elif sys.platform.find('haiku') != -1:
     HAIKU = True
 else:
     try:
-        _lib = ctypes.cdll['./libtcod-mingw.dll']
+        _lib = ctypes.cdll['libtcod-mingw.dll']
         MINGW=True
     except WindowsError:
-        _lib = ctypes.cdll['./libtcod-VS.dll']
+        _lib = ctypes.cdll['libtcod-VS.dll']
         MSVC=True
     # On Windows, ctypes doesn't work well with function returning structs,
     # so we have to user the _wrapper functions instead
