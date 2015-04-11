@@ -9,7 +9,7 @@ class RenderSystem:
         libtcod.console_set_custom_font('../terminal.png')
         libtcod.console_init_root(self.SCREEN_WIDTH, self.SCREEN_HEIGHT, 'python/libtcod tutorial', False)
 
-    def update(self):
+    def update(self, entity_system):
         libtcod.console_set_default_foreground(0, libtcod.white)
         libtcod.console_put_char(0, 20, 20, '@', libtcod.BKGND_NONE)
 
